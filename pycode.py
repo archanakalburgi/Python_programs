@@ -6,6 +6,8 @@ for i in flptr:
     reading_last_item(i)
 flptr.close()
 
+#chages to push
+
 # sum=0
 # price=[]
 
