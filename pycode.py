@@ -2,9 +2,21 @@ def reading_last_item(line):
     print(line)
 
 flptr=open("/Users/archana/learn-code/git-what/ledger.txt","r")
+
+price=[]
 for i in flptr:
     reading_last_item(i)
+    if reading_last_item(i) = Total:
+        price.append(reading_last_item(i))
+
+for i in price:
+    sum=sum+price[i]
+
+print(sum)
+
 flptr.close()
+
+
 
 #chages to push
 
