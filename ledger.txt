@@ -1,0 +1,6 @@
+Date,Name, Item, Total
+15-02-2020, ABVS, Rice, 10
+15-02-2020,ABVS, Bali, 10
+18-02-2020,ABVS, Bali, -10
+20-02-2020,ABVS, soap, 230
+
