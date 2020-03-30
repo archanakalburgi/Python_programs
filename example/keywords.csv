@@ -1,0 +1,16 @@
+Keyword,KeyWord_Variant1,KeyWord_Variant2,KeyWord_Variant3,KeyWord_Variant4,Weight
+IaaS,Infrastructure as a services,Cloud services,Cloud solutions,Cloud,20
+Managed Services,Information Services,ITIL,,,20
+NOC,Network operation Center,Network,,,10
+SOC,security operation center,Security,,,15
+IT Infrastructure services,ITIL,Infrastructure,,,20
+Help Desk,,,,,10
+IT Outsource,Outsorce,,,,5
+Mechanical and Electrical Instollation,Mechanical and Electrical engineering,Mechanical ,Electrical,,20
+Industry,factory,,,,10
+Commercial building,office ,shoping mall,,,20
+Residential,Condominium,,,,10
+Chemical product,Chemical,,,,20
+Solvent,,,,,20
+Industry,Manufacture,,,,20
+Distributor,,,,,15
