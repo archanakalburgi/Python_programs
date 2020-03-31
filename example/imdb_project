@@ -1,0 +1,220 @@
+sentiment analysis :
+a type of text classification 
+goal - to identify the text polarity (eg:opinions on a product)
+eg : analysing twiter post, movie review, products from a brand
+
+form of expressing the opinion :
+like/dislike 
+granular :  rating system (1 to 5)
+            range - not just like / dislike 
+
+what is machine learning ?
+-
+-used for text classification problem
+
+what is a right model and how to choose one?
+- model -> pattern/procedure applied for classifying text
+
+how to collect the necessary data?
+-
+
+API-
+-they handle queries 
+
+what are imbalanced data ?
+- just positive / just negetive reviews 
+cannot consider just the positive reviews because it will not be able to classify the negetives ones 
+
+what are training samples?
+-part of dataset
+
+*text classifier is built from the dataset
+
+steps :
+-apply a model to training set 
+-come up with a pattern 
+-apply the pattern to the test set 
+
+what are the characteristics of a data?
+-
+
+a better model:
+-uses less computational resources
+-highly accurate
+-less data for training 
+-
+
+what is TensorFlow
+-
+
+
+what is text:
+    polarity - 
+    contradicting opinion/ends - earth's pole, magnetic ends, people's opinion (like/dislike)
+    
+    positive/ negative text polarity -
+
+steps
+1.assembling dataset
+2.knowing key characteristics of data 
+
+---------loading data into python ---------
+
+random.seed(10)
+- initializes the random number generator 
+- when initialised to a same seed value it generates the same random number 
+random.seed(10)
+>>> print(random.randint(1,100))
+58
+>>> random.seed(10)
+>>> print(random.randint(1,100))
+58
+
+
+
+
+how to check the random samples  (correct label to the sentiment/sample text)
+-do manually 
+
+dictionary & zip doesn't work for big dataset
+???
+
+data preprocessing and vectorization??
+-presenting text data to algorithm that expects numeric input
+
+
+
+---------------CHOOSE A MODEL-------------
+
+desired text classificaition model
+-accurate
+-minimizing computational time 
+
+"We ran a large number (~450K) of experiments across problems of different types
+(especially sentiment analysis and topic classification problems), 
+using 12 datasets, 
+alternating for each dataset between different data preprocessing techniques and different model architectures. 
+This helped us identify dataset parameters that influence optimal choices."
+
+
+Algorithm for - dtat prep and model building (converting text into numerical values)
+1. no of samples(texts)/no of words per sample(text) [25000/174=143.67 ~= 144]
+
+2. less than 1500 
+therefore, 
+tokenize test as n-grams
+use MLP (multi layered perceptron) model to classify 
+a. split texts into word n-grams
+convert the n-grams into vectors (vectors - is a tuple of one or more values called scalars) 
+b. score importance of vectors and then select top 20k using scores
+c. built MLP model
+
+3. if ratio > 1500
+
+4. measure the model performance with different hyperparameter(??) values 
+
+
+Types of models :
+1. sequence model - 
+    those that use word ordering information (order)
+    
+    includes-
+        convolutional neural networks (CNNs), 
+        recurrent neural networks (RNNs), and their variations
+
+2. n-gram models - 
+    those that see texts as "bags" of words (no order)
+    
+    includes-
+        logistic regression, 
+        simple multi- layer perceptrons (MLPs, or fully-connected neural networks), 
+        gradient boosted trees and 
+        support vector machines.
+
+***** we will use MLP model ******
+it takes n-grams as input 
+
+............MACHINE LEARNING ALGORITHM..........
+    - i/p : numbers
+    >convert text - numerical vectors
+
+steps
+
+1. tokenization : 
+    divide texts into words/smaller sub-texts 
+    will allow generalizaton of relationship between text and labels
+    - determines the "vocabulary" of the dataset (set of unique tokens present in the data)
+
+2. vectorization : 
+    defining a numerical measure to characterise these texts 
+
+n-gram - The mouse ran up the clock
+word unigrams (n = 1) - ['the', 'mouse', 'ran', 'up', 'clock']
+word bigrams (n = 2) - ['the mouse', 'mouse ran', 'ran up', 'up the', 'the clock']
+
+
+tokenization :-
+    tokenizing into word unigrams + bigrams - good accuracy + less compute time
+
+vectorization :-
+    n-grams must be turned into numerical vectors 
+    -assign indices to n-grams 
+
+
+options to vectorize :
+    one-hot coding :
+        sample text is represented as a vector indicating "presence or absence" of a token in the text 
+        '''[[['The mouse ran up the clock' = [1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1]]]]''' ???????
+
+    count encoding :
+        sample text is represented as a vector indicating the "count" of a token in the text
+
+drawback of the options :
+    the unique words are not distinguished 
+
+solution :
+    tf-idf encoding
+    but 
+    it uses more memory since the number are floating point representation 
+    tkaes more time to compute
+
+feature selection 
+    omit rare token
+
+    statistical functions that take features, corresponding labels and output the feature importance score. 
+    1. f_classif and 
+    2. chi2
+
+- adding more features (tokens) is unecessary since accuracy remains same with more words 
+
+SelectKBest(f_classif, k=min(TOP_K, x_train.shape[1]))
+    f_classif
+        i/p -> take features, corresponding labels 
+        o/p -> feature importance score   
+
+    x_train.shape[1]
+        it returns the dimension of the array,
+        in this case (train_text) it's one dimensional array 
+
+    so k will have 20,000 value stores since we have more words in x_train.shape[1]
+
+    it will give you 20000 words with highest score 
+
+...................classification model..................
+
+TensorFlow
+    source platform for machine learning
+
+
+    tf.keras
+        we build ML models
+        assembling layers together 
+        data-processing building blocks 
+        
+
+
+    
+
+
+
+
